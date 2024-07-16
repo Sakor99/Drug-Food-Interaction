@@ -1,0 +1,16 @@
+[default]
+main_directory:/data/shared
+
+[datasets]
+number_of_datasets:1
+output_folder:C:/Users/sakors/Desktop/DFI/Mapping
+all_in_one_file:no
+remove_duplicate:yes
+enrichment:no
+name:out
+ordered:yes
+
+[dataset1]
+name:DFI_Recomm_Mapping_Output
+mapping:C:/Users/sakors/Desktop/DFI/Mapping/DFI_Recomm_Mapping.ttl
+
