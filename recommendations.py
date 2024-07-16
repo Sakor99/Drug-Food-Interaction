@@ -1,9 +1,7 @@
 import csv
 import re
 
-# Function to extract Recommendation from the interaction text
 def extract_recommendation(interaction_text):
-    # List of phrases that represent Recommendations
     recommendations = [
         "Avoid", "Drink", "Administer", "Limit",
         "Take on an empty stomach", "Take", "Do not take", "Exercise caution","Ensure"
@@ -23,7 +21,6 @@ def extract_recommendation(interaction_text):
 
     return recommendation
 
-# Function to extract Foods after "Examples include" and return a list of Foods
 def extract_foods(interaction_text):
     foods = []
     if "Examples include" in interaction_text:
@@ -36,7 +33,6 @@ def extract_foods(interaction_text):
 
     return foods
 
-# Function to extract Time information
 def extract_time(interaction_text):
     time_patterns = [
         r"\b1\s+hour before or (\d+)\s+hours after\b",
@@ -60,7 +56,6 @@ def extract_time(interaction_text):
 
     return ""
 
-# Function to fill in Food based on keywords in interaction text
 def fill_food(interaction_text):
     if "fluids" in interaction_text:
         return "Fluids"
@@ -81,13 +76,11 @@ def fill_food(interaction_text):
     else:
         return ""
 
-# Main function to process the original CSV and create a new one
 def process_interactions(input_file, output_file):
     with open(input_file, 'r', newline='', encoding='utf-8') as infile, open(output_file, 'w', newline='', encoding='utf-8') as outfile:
         reader = csv.reader(infile)
         writer = csv.writer(outfile)
 
-        # Assuming the headers of the input CSV are "Drug", "Food", "Interaction"
         header = next(reader)
         writer.writerow(["Drug", "Food", "Recommendation", "Time"])
 
@@ -101,21 +94,17 @@ def process_interactions(input_file, output_file):
                 time = extract_time(interaction_text)
 
                 if not food:
-                # Fill in Food based on keywords in interaction text
                     food = fill_food(interaction_text)
 
                 if "Examples include" not in interaction_text:
-                # Write the extracted data to the new CSV file (keeping the Food column from the original file)
                     writer.writerow([drug, food, recommendation, time, interaction_text])
                 else:
-                # If "Examples include" is present, extract Foods and create new rows with the same Drug, Recommendation, and Time
                     foods = extract_foods(interaction_text)
                     for new_food in foods:
                         writer.writerow([drug, new_food, recommendation, time, interaction_text])
 
     print("Extraction and writing to the new CSV file completed!")
 
-# Example usage
 input_csv_file = "Drug-Food_Recommendation.csv"
 output_csv_file = "recomm_output.csv"
 process_interactions(input_csv_file, output_csv_file)
