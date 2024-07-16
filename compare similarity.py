@@ -7,7 +7,7 @@ base_url = 'https://uts-ws.nlm.nih.gov/rest/content/current/CUI/{}/?apiKey=0d269
 
 
 values = []
-with open('C:/Users/sakors/PycharmProjects/DPI/Effect_NEW_New.csv', 'r', encoding= 'utf-8') as csv_file:
+with open('DFI.csv', 'r', encoding= 'utf-8') as csv_file:
     csv_reader = csv.reader(csv_file)
     for row in csv_reader:
         if len(row) >= 2:
