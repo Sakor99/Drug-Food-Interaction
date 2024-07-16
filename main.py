@@ -3,7 +3,6 @@ def extract_food_impact_effect(interaction_text):
     food = ""
     interactions = []
 
-    # Food extraction
     if interaction_text.startswith("Take with a full glass of water"):
         food = ""
     elif interaction_text.startswith("Drink"):
@@ -28,7 +27,6 @@ def extract_food_impact_effect(interaction_text):
     elif 'foods high in furanocoumarins' in interaction_text:
         food = "furanocoumarins"
 
-    # Impact and Effect extraction
     keywords = ["increased", "increases", "increasing", "increase", "reduces", "reduced", "reduce", "potentiated",
                 "potentiates", "potentiate", "enhanced", "enhance", "impair", "decreases", "decreased", "decrease",
                 "caused", "cause", "worsen", "aggravate"]
@@ -57,7 +55,7 @@ rows = []
 
 with open(input_file, 'r', newline='', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
-    header = next(reader)  # Read the header row
+    header = next(reader)  
 
     for row in reader:
         if len(row) == len(header):
@@ -68,10 +66,9 @@ with open(input_file, 'r', newline='', encoding='utf-8') as csvfile:
                 food, impact, effect = interaction
                 rows.append([drug_id, drug_label, interaction, food, impact, effect,interaction_text])
 
-# Write the extracted data to a new CSV file
 with open(output_file, 'w', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(["Drug ID", "Drug Label", "Interaction", "Food", "Impact", "Effect","interaction_text"])  # Write the header row
+    writer.writerow(["Drug ID", "Drug Label", "Interaction", "Food", "Impact", "Effect","interaction_text"])  
     writer.writerows(rows)
 
 print("Extraction complete. The extracted data are saved in", output_file)
