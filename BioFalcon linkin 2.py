@@ -26,7 +26,7 @@ def Biofalcon_call(text):
     else:
         return []
 
-csv_file_path = 'DFI__FORM2.csv'
+csv_file_path = 'DFI.csv'
 columns = ['Effect']
 
 rows = []
@@ -60,7 +60,7 @@ with open(csv_file_path, 'r', encoding='utf-8', errors='ignore') as file:
 
         rows.append(new_row)
 
-output_file_path = 'DFI__FORM3.csv'  # Replace with the desired output file path
+output_file_path = 'output.csv'
 
 with open(output_file_path, 'w', encoding='utf-8', newline='') as file:
     writer = csv.DictWriter(file, fieldnames=new_fieldnames)
