@@ -1,6 +1,6 @@
 import csv
 import re
-# Define the rules for mapping Impact values
+
 impact_mapping ={
     'increasing': 'increase',
     'increased': 'increase',
@@ -17,7 +17,7 @@ impact_mapping ={
 
 
 }
-# Define the rules for mapping food values
+
 food_mapping = {
     'herbs and supplements with anticoagulant/antiplatelet activity': 'herb',
     'hypertensive herbs (e': 'herb',
@@ -53,7 +53,7 @@ food_mapping = {
 }
 
 
-# Function to apply the effect mapping rules
+
 def map_effect(effect):
     effects = []
     if 'myopathy' in effect:
@@ -279,12 +279,12 @@ def map_effect(effect):
     return effects
 
 
-# Open the original CSV file for reading
+
 with open('extracted_patterns1.csv', 'r', newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     fieldnames = ['Drug ID', 'Drug Label', 'Interaction', 'Food', 'Impact', 'Effect']
 
-    # Open the new CSV file for writing
+    
     with open('extracted_patterns2.csv', 'w', newline='', encoding='utf-8') as newcsvfile:
         writer = csv.DictWriter(newcsvfile, fieldnames=fieldnames)
         writer.writeheader()
