@@ -15,7 +15,6 @@ impact_mapping ={
     'caused': 'cause',
 
 
-
 }
 
 food_mapping = {
