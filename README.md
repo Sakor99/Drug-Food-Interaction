@@ -109,4 +109,22 @@ python recommendations.py
 
 Use [SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer) or similar tools to apply `.ttl` mapping files and produce `.nt` RDF outputs.
 
+##  Output
+
+After processing, RDF triples representing **drugs, foods, effects, impacts**, and their interactions will be available in `.nt` format under the `Mapping/` folder. These triples can be used for semantic reasoning, knowledge graph exploration, or querying with SPARQL.
+
+---
+
+##  References
+
+- **DrugBank**: [https://go.drugbank.com/](https://go.drugbank.com/)
+- **BioFalcon**: [https://biofalcon.kaust.edu.sa/](https://biofalcon.kaust.edu.sa/)
+- **UMLS Metathesaurus**: [https://www.nlm.nih.gov/research/umls/index.html](https://www.nlm.nih.gov/research/umls/index.html)
+- **SDM-RDFizer**: [https://github.com/SDM-TIB/SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer)
+
+---
+
+##  Acknowledgements
+
+This work was developed as part of the **P4-LUCAT** project, within a research workflow for semantic enrichment of biomedical data.
 
