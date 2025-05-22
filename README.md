@@ -48,3 +48,65 @@ Drug-Food-Interaction-main/
 │
 ├── error.log                           # Processing error logs
 └── .idea/                              # PyCharm IDE metadata (can be ignored)
+```
+## 🛠️ Requirements
+
+- Python 3.7+
+- `fuzzywuzzy`
+- `pandas`
+- **BioFalcon API Access**  
+  (Make sure to include `.env` or credentials if required for BioFalcon access.)
+
+Install required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+If requirements.txt is missing, install manually:
+```bash
+pip install pandas fuzzywuzzy python-Levenshtein
+```
+## Usage
+
+1. **Start by extracting interactions**
+
+```bash
+python main.py
+```
+
+2. **Process multiple-interaction entries**
+
+```bash
+python "extracting the Inter has more than one DFI.py"
+```
+
+3. **Normalize and prepare terms**
+
+```bash
+python dictionary.py
+```
+
+4. **Link terms with UMLS using BioFalcon**
+
+```bash
+python "BioFalcon linking.py"
+```
+
+5. **Refine matches using fuzzy similarity**
+
+```bash
+python "compare similarity.py"
+```
+
+6. **Extract only recommendation-based interactions**
+
+```bash
+python recommendations.py
+```
+
+7. **Generate RDF triples with mappings**
+
+Use [SDM-RDFizer](https://github.com/SDM-TIB/SDM-RDFizer) or similar tools to apply `.ttl` mapping files and produce `.nt` RDF outputs.
+
+
