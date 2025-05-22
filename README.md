@@ -4,7 +4,7 @@ This project extracts and semantically models **drug-food interactions** using d
 
 ---
 
-## 🚀 Project Workflow
+##  Project Workflow
 
 1. **Data Extraction**  
    - The CSV file `drugBank_drug_food_interactions.csv` contains raw interaction descriptions from DrugBank.
