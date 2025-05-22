@@ -1,6 +1,6 @@
 # Drug-Food Interaction
 
-This project extracts and semantically models **drug-food interactions** using data sourced from **DrugBank**. It processes natural language interaction descriptions, links terms to biomedical ontologies via **BioFalcon**, and generates a structured RDF-based **Knowledge Graph** of interactions, drugs, foods, effects, and recommendations.
+This project extracts and semantically models **drug-food interactions** using data sourced from **DrugBank**. It processes natural language interaction descriptions, links terms to biomedical ontologies via **BioFalcon**, and generates a structured RDF-based **Knowledge Graph** of interactions, drugs, foods, effects, impacts, and recommendations.
 
 ---
 
@@ -8,7 +8,7 @@ This project extracts and semantically models **drug-food interactions** using d
 
 1. **Data Extraction**  
    - The CSV file `drugBank_drug_food_interactions.csv` contains raw interaction descriptions from DrugBank.
-   - `main.py` processes the CSV file and extracts relevant terms (drugs, foods, effects, interactions).
+   - `main.py` processes the CSV file and extracts relevant terms (drugs, foods, effects, impacts, interactions).
    - `extracting the Inter has more than one DFI.py` handles cases where multiple DFIs are embedded in a single entry.
 
 2. **Term Normalization**  
